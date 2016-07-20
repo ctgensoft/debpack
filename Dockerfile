@@ -1,4 +1,4 @@
-FROM debian/jessie
+FROM debian:jessie
 # Add repositories
 RUN echo "# add src debian" >> /etc/apt/sources.list
 RUN echo "deb-src http://httpredir.debian.org/debian jessie main" >> /etc/apt/sources.list
