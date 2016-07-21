@@ -15,4 +15,5 @@ RUN apt-get install -y python-stdeb
 # General tools
 RUN apt-get install -y vim git subversion
 # Prepare environment
+ENV DIST jessie-backports
 #RUN pbuilder create
