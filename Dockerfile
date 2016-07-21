@@ -7,12 +7,12 @@ RUN echo "deb http://httpredir.debian.org/debian testing main" >> /etc/apt/sourc
 # Install packages
 RUN apt-get update
 # Install perl from testing (bugged in jessie)
-RUN apt-get -t testing install perl
+RUN apt-get -t testing install -y perl
 # Packaging tools
-RUN apt-get install --fix-missing build-essential devscripts quilt pbuilder lintian
+RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder lintian
 # For packaging python modules that use setuptools
-RUN apt-get install python-stdeb
+RUN apt-get install -y python-stdeb
 # General tools
-RUN apt-get install vim git subversion
+RUN apt-get install -y vim git subversion
 # Prepare environment
 RUN pbuilder create
