@@ -9,8 +9,8 @@ and the basic tools are installed: git, svn, vi.
 Run it in detached mode and later on execute bash in order to play with it.
 
 ~~~~
-docker run --privileged=True --name debian8-packaging bash
-docker exec -it debian8-packaging
+docker run --privileged=True --name debian8-packaging
+docker exec -it debian8-packaging  bash
 ~~~~
 
 # How to start packaging?
