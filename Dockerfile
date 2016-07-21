@@ -15,4 +15,4 @@ RUN apt-get install -y python-stdeb
 # General tools
 RUN apt-get install -y vim git subversion
 # Prepare environment
-RUN pbuilder create
+#RUN pbuilder create
