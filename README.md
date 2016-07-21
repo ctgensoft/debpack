@@ -9,17 +9,12 @@ and the basic tools are installed: git, svn, vi.
 Run it in detached mode and later on execute bash in order to play with it.
 
 ~~~~
-docker run -d --privileged=True --name debian8-packaging cmft/debian8-packaging
-docker exec -it debian8-packaging  bash
+docker run -it --privileged=True --name debian8-packaging cmft/debian8-packaging bash
 ~~~~
 
 # How to start packaging?
 
 Once you finished your package modifications (add patch(es), update upstream, modify changelog):
 ~~~~
-cd <dir_containing _debian_dir>
-sudo pbuilder --update
-pdebuild
-cd /var/cache/pbuilder/result
-lintian -EviIc --pedantic --color auto <pkg name>*.changes
+TODO
 ~~~~
