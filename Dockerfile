@@ -9,7 +9,7 @@ RUN echo "deb-src http://httpredir.debian.org/debian sid main" >> /etc/apt/sourc
 RUN apt-get update
 # Install perl and sphinx from sid (bugged in jessie)
 RUN apt-get -t sid install -y perl
-RUN apt-get -t sid install python-sphinx=1.4.5-1
+RUN apt-get -t sid install -y python-sphinx=1.4.5-1
 # Packaging tools
 RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder lintian
 # For packaging python modules that use setuptools
