@@ -8,6 +8,7 @@ RUN echo "# add other src repositories debian" >> /etc/apt/sources.list
 RUN echo "deb-src http://httpredir.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 RUN echo "deb-src http://httpredir.debian.org/debian testing main" >> /etc/apt/sources.list
 RUN echo "deb-src http://httpredir.debian.org/debian sid main" >> /etc/apt/sources.list
+RUN echo "deb-src http://httpredir.debian.org/debian experimental main" >> /etc/apt/sources.list
 # Install packages
 RUN apt-get update
 # Install perl and sphinx from backport (bugged in jessie)
