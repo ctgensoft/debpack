@@ -9,7 +9,8 @@ and the basic tools are installed: git, svn, vi.
 Run it in detached mode and later on execute bash in order to play with it.
 
 ~~~~
-docker run -it --privileged=True --name debian8-packaging cmft/debian8-packaging bash
+xhost +local:
+docker run -it --privileged=True -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix --name debian8-packaging cmft/debian8-packaging bash
 ~~~~
 
 # How to start packaging?
