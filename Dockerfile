@@ -9,6 +9,12 @@ RUN echo "deb-src http://httpredir.debian.org/debian jessie-backports main" >> /
 RUN echo "deb-src http://httpredir.debian.org/debian testing main" >> /etc/apt/sources.list
 RUN echo "deb-src http://httpredir.debian.org/debian sid main" >> /etc/apt/sources.list
 RUN echo "deb-src http://httpredir.debian.org/debian experimental main" >> /etc/apt/sources.list
+# Set more priority to jessie backport repo
+RUN touch  /etc/apt/preferences
+RUN echo "Package: *
+Pin: release a=jessie-backports
+Pin-Priority: 501
+" >> /etc/apt/preferences
 # Install packages
 RUN apt-get update
 # Install perl and sphinx from backport (bugged in jessie)
