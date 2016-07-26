@@ -12,7 +12,7 @@ RUN echo "deb-src http://httpredir.debian.org/debian experimental main" >> /etc/
 # Install packages
 RUN apt-get update
 # Packaging tools
-RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder lintian
+RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder lintian dh-autoreconf
 # For packaging python modules that use setuptools
 RUN apt-get install -y python-stdeb
 # General tools
