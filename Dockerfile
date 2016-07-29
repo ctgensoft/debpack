@@ -12,11 +12,11 @@ RUN echo "deb-src http://httpredir.debian.org/debian experimental main" >> /etc/
 # Install packages
 RUN apt-get update
 # Packaging tools
-RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder lintian ipython
+RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder lintian pkg-config dh-make
 # For packaging python modules that use setuptools
 RUN apt-get install -y python-stdeb
 # General tools
-RUN apt-get install -y vim git subversion
+RUN apt-get install -y vim git subversion ipython
 # Prepare environment
 ENV DIST jessie-backports
 #RUN pbuilder create
