@@ -22,4 +22,6 @@ ENV DIST jessie-backports
 # For quilt (patching tool)
 ENV QUILT_PATCHES debian/patches
 ENV QUILT_REFRESH_ARGS "-p ab --no-timestamps --no-index"
+# For gitlab
+ENV GIT_SSL_NO_VERIFY 1
 #RUN pbuilder create
