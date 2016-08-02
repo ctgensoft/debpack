@@ -19,4 +19,7 @@ RUN apt-get install -y python-stdeb
 RUN apt-get install -y vim git subversion ipython
 # Prepare environment
 ENV DIST jessie-backports
+# For quilt (patching tool)
+ENV QUILT_PATCHES debian/patches
+ENV QUILT_REFRESH_ARGS "-p ab --no-timestamps --no-index"
 #RUN pbuilder create
