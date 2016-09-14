@@ -17,6 +17,8 @@ RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder l
 RUN apt-get install -y python-stdeb
 # General tools
 RUN apt-get install -y vim git subversion ipython
+# Cowbuilder
+RUN apt-get install -y cowbuilder git-buildpackage
 # Prepare environment
 ENV DIST jessie-backports
 # For quilt (patching tool)
