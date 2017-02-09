@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install --fix-missing -y \
         python-stdeb \
         quilt
 
+RUN mkdir /packaging
 
 # Set default target distribution for chroot
 ENV DIST stretch
