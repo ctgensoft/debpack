@@ -34,5 +34,8 @@ ENV QUILT_REFRESH_ARGS "-p ab --no-timestamps --no-index"
 # For gitlab
 ENV GIT_SSL_NO_VERIFY 1
 
+# configuration of gbp
+COPY gbp.conf /etc/git-buildpackage/
+
 # TODO:
 #RUN pbuilder create
