@@ -10,7 +10,9 @@ Run it in detached mode and later on execute bash in order to play with it.
 
 ~~~~
 xhost +local:
-docker run -it --privileged=True -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix --name debpack ctgensoft/debpack bash
+docker run -it --privileged=True  --name debpack -h debpack \
+  -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix \
+  ctgensoft/debpack bash
 ~~~~
 
 # How to start packaging?
