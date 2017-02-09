@@ -1,16 +1,9 @@
-FROM debian:jessie
-# Add repositories
-RUN echo "# add src debian" >> /etc/apt/sources.list
-RUN echo "deb-src http://httpredir.debian.org/debian jessie main" >> /etc/apt/sources.list
-RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
-RUN echo "# add other src repositories debian" >> /etc/apt/sources.list
-#RUN echo "deb http://httpredir.debian.org/debian sid main" >> /etc/apt/sources.list
-RUN echo "deb-src http://httpredir.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
-RUN echo "deb-src http://httpredir.debian.org/debian testing main" >> /etc/apt/sources.list
-RUN echo "deb-src http://httpredir.debian.org/debian sid main" >> /etc/apt/sources.list
-RUN echo "deb-src http://httpredir.debian.org/debian experimental main" >> /etc/apt/sources.list
-# Install packages
+FROM debian:stretch
+
+# Add extra repos
+COPY official_src.list /etc/apt/sources.d/
 RUN apt-get update
+
 # Packaging tools
 RUN apt-get install --fix-missing -y build-essential devscripts quilt pbuilder lintian pkg-config dh-make
 # For packaging python modules that use setuptools
