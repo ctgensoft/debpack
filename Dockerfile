@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 # Add extra repos
-COPY official_src.list /etc/apt/sources.d/
+COPY official_src.list /etc/apt/sources.list.d/
 
 # Install packages
 RUN apt-get update && apt-get install --fix-missing -y \
