@@ -24,15 +24,13 @@ RUN apt-get update && apt-get install --fix-missing -y \
 
 # Configure vim
 COPY .vimrc /root/
+# Configure quilt
+COPY .quiltrc /root/
 
 RUN mkdir /packaging
 
 # Set default target distribution for chroot
 ENV DIST stretch
-
-# For quilt (patching tool)
-ENV QUILT_PATCHES debian/patches
-ENV QUILT_REFRESH_ARGS "-p ab --no-timestamps --no-index"
 
 # For gitlab
 ENV GIT_SSL_NO_VERIFY 1
