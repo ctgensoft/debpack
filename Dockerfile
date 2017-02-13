@@ -22,6 +22,9 @@ RUN apt-get update && apt-get install --fix-missing -y \
         python-stdeb \
         quilt
 
+# Configure vim
+COPY .vimrc /root/
+
 RUN mkdir /packaging
 
 # Set default target distribution for chroot
@@ -39,3 +42,4 @@ COPY gbp.conf /etc/git-buildpackage/
 
 # TODO:
 #RUN pbuilder create
+
